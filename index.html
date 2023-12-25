@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      src="https://kit.fontawesome.com/b2a8baa8c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>To Do</h1>
+    <section class="boards">
+      <div class="board">
+        <h3>To do</h3>
+        <!-- Card -->
+        <div>
+          <input type="checkbox" id="show" />
+          <label for="show" class="show-btn">
+            <i class="fa-solid fa-plus"></i>Add Card</label
+          >
+          <!-- modal -->
+          <div class="container">
+            <h2 class="text">Add task</h2>
+            <form class="form" action="">
+              <div class="data">
+                <p class="text"><i class="fa-solid fa-heading"></i> Title</p>
+                <input type="text" />
+              </div>
+              <div class="data">
+                <p class="text"><i class="fa-solid fa-bars"></i> Description</p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+              </div>
+              <div class="data">
+                <p class="text"><i class="fa-solid fa-filter"></i> Status</p>
+                <select class="selectMenu" id="country" name="country">
+                  <option value="to-do">To do</option>
+                  <option value="in-progress">In progress</option>
+                  <option value="stuck">Stuck</option>
+                  <option value="done">Done</option>
+                </select>
+              </div>
+              <div class="data">
+                <p class="text"><i class="fa-solid fa-sliders"></i> Priority</p>
+                <select class="selectMenu" id="country" name="country">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+              <button class="text">Add task</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="board">
+        <h3>In progress</h3>
+        <!-- Card -->
+        <div>
+          <input type="checkbox" id="show" />
+          <label for="show" class="show-btn">
+            <i class="fa-solid fa-plus"></i>Add Card</label
+          >
+        </div>
+      </div>
+      <div class="board">
+        <h3>Stuck</h3>
+        <!-- Card -->
+        <div>
+          <input type="checkbox" id="show" />
+          <label for="show" class="show-btn">
+            <i class="fa-solid fa-plus"></i>Add Card</label
+          >
+        </div>
+      </div>
+      <div class="board">
+        <h3>Done</h3>
+        <!-- Card -->
+        <div>
+          <input type="checkbox" id="show" />
+          <label for="show" class="show-btn">
+            <i class="fa-solid fa-plus"></i>Add Card</label
+          >
+        </div>
+      </div>
+    </section>
+    <script src="/index.js"></script>
+
+    <!-- test -->
+  </body>
+</html>

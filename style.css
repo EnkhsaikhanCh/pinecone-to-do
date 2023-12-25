@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;500;600&display=swap");
+
+body {
+  margin: 0;
+}
+
+.text {
+  font-family: Montserrat;
+}
+
+.boards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+}
+
+.board {
+  width: 330px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+h3 {
+  font-family: Montserrat;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Modal */
+.show-btn {
+  border: none;
+  border-radius: 7px;
+  height: 10px;
+  width: 310px;
+  display: flex;
+  align-items: center;
+  color: rgb(101, 101, 101);
+  gap: 10px;
+  font-family: Montserrat;
+  padding: 10px;
+}
+
+.show-btn:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+/* Modal */
+.container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  width: 410px;
+  padding: 30px;
+  box-shadow: 0 0 8px rgb(247, 245, 245);
+  border-radius: 10px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+#show:checked ~ .container {
+  display: block;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container h2 {
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+form p {
+  margin: 0;
+}
+
+form input {
+  height: 30px;
+  border: none;
+  background-color: #091e420f;
+  border-radius: 7px;
+}
+
+form button {
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #c6c6c6;
+}
+
+form textarea {
+  height: 100px;
+  border: none;
+  background-color: #091e420f;
+  border-radius: 7px;
+}
+
+.selectMenu {
+  height: 30px;
+}
