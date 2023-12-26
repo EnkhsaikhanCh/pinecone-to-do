@@ -17,83 +17,65 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>To Do</h1>
     <section class="boards">
       <div class="board">
         <h3>To do</h3>
-        <!-- Card -->
-        <div>
-          <input type="checkbox" id="show" />
-          <label for="show" class="show-btn">
-            <i class="fa-solid fa-plus"></i>Add Card</label
-          >
-          <!-- modal -->
-          <div class="container">
-            <h2 class="text">Add task</h2>
-            <form class="form" action="">
-              <div class="data">
-                <p class="text"><i class="fa-solid fa-heading"></i> Title</p>
-                <input type="text" />
-              </div>
-              <div class="data">
-                <p class="text"><i class="fa-solid fa-bars"></i> Description</p>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-              </div>
-              <div class="data">
-                <p class="text"><i class="fa-solid fa-filter"></i> Status</p>
-                <select class="selectMenu" id="country" name="country">
-                  <option value="to-do">To do</option>
-                  <option value="in-progress">In progress</option>
-                  <option value="stuck">Stuck</option>
-                  <option value="done">Done</option>
-                </select>
-              </div>
-              <div class="data">
-                <p class="text"><i class="fa-solid fa-sliders"></i> Priority</p>
-                <select class="selectMenu" id="country" name="country">
-                  <option value="low">Low</option>
-                  <option value="medium">Medium</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </div>
-              <button class="text">Add task</button>
-            </form>
-          </div>
-        </div>
+        <button onclick="showModal()">Add task</button>
       </div>
       <div class="board">
         <h3>In progress</h3>
-        <!-- Card -->
-        <div>
-          <input type="checkbox" id="show" />
-          <label for="show" class="show-btn">
-            <i class="fa-solid fa-plus"></i>Add Card</label
-          >
-        </div>
+        <button onclick="showModal()">Add task</button>
       </div>
       <div class="board">
         <h3>Stuck</h3>
-        <!-- Card -->
-        <div>
-          <input type="checkbox" id="show" />
-          <label for="show" class="show-btn">
-            <i class="fa-solid fa-plus"></i>Add Card</label
-          >
-        </div>
+        <button onclick="showModal()">Add task</button>
       </div>
       <div class="board">
         <h3>Done</h3>
-        <!-- Card -->
-        <div>
-          <input type="checkbox" id="show" />
-          <label for="show" class="show-btn">
-            <i class="fa-solid fa-plus"></i>Add Card</label
-          >
+        <button onclick="showModal()">Add task</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal" id="createModal">
+        <div class="modal-bg" onclick="hideModal()"></div>
+        <div class="modal-content">
+          <header class="modalHeader">
+            <h2 class="text">Add task</h2>
+            <button onclick="hideModal()">
+              <i class="fa-solid fa-xmark" style="color: #ffffff"></i>
+            </button>
+          </header>
+          <form class="form" action="">
+            <div class="data">
+              <p class="text"><i class="fa-solid fa-heading"></i> Title</p>
+              <input type="text" />
+            </div>
+            <div class="data">
+              <p class="text"><i class="fa-solid fa-bars"></i> Description</p>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="data">
+              <p class="text"><i class="fa-solid fa-filter"></i> Status</p>
+              <select class="selectMenu" id="country" name="country">
+                <option value="to-do">To do</option>
+                <option value="in-progress">In progress</option>
+                <option value="stuck">Stuck</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+            <div class="data">
+              <p class="text"><i class="fa-solid fa-sliders"></i> Priority</p>
+              <select class="selectMenu" id="country" name="country">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+            <button class="text">Add task</button>
+          </form>
         </div>
       </div>
     </section>
-    <script src="/index.js"></script>
-
-    <!-- test -->
+    <script src="./script.js"></script>
   </body>
 </html>

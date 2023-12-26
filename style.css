@@ -2,13 +2,17 @@
 
 body {
   margin: 0;
+  background-color: #22272e;
 }
 
 .text {
   font-family: Montserrat;
+  font-weight: 600;
+  color: white;
 }
 
 .boards {
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -18,11 +22,31 @@ body {
 
 .board {
   width: 330px;
-  border-radius: 10px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  background-color: #f0f0f0;
+  padding: 15px;
+  background-color: #2d333b;
+  /* background: linear-gradient(
+    126.6deg,
+    rgba(124, 130, 177, 0.12) 28.69%,
+    rgba(17, 18, 27, 0) 100%
+  ); */
+  color: white;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.board button {
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #191e24;
+  color: white;
+}
+
+.board button:hover {
+  background-color: #1e242b;
 }
 
 h3 {
@@ -31,44 +55,42 @@ h3 {
   padding: 10px;
 }
 
-/* Modal */
-.show-btn {
-  border: none;
-  border-radius: 7px;
-  height: 10px;
-  width: 310px;
-  display: flex;
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
   align-items: center;
-  color: rgb(101, 101, 101);
-  gap: 10px;
-  font-family: Montserrat;
-  padding: 10px;
 }
 
-.show-btn:hover {
-  background-color: rgb(218, 218, 218);
-}
-
-/* Modal */
-.container {
-  display: none;
+.modal-bg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  width: 410px;
-  padding: 30px;
-  box-shadow: 0 0 8px rgb(247, 245, 245);
+  inset: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  opacity: 1;
+  background-color: #22272e;
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.modalHeader button {
+  background-color: #2d333b;
+  border: none;
+  height: 30px;
+  width: 30px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-#show:checked ~ .container {
-  display: block;
+.modalHeader button:hover {
+  background-color: #181c23;
 }
 
 .form {
@@ -82,9 +104,22 @@ input[type="checkbox"] {
   gap: 15px;
 }
 
-.container h2 {
-  margin-bottom: 30px;
-  padding: 0;
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.modalHeader h2 {
+  margin: 0;
+}
+
+.selectMenu {
+  background-color: #d0d2d60f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
 }
 
 form p {
@@ -94,8 +129,10 @@ form p {
 form input {
   height: 30px;
   border: none;
-  background-color: #091e420f;
+  background-color: #d0d2d60f;
   border-radius: 7px;
+  color: white;
+  padding: 0 10px;
 }
 
 form button {
@@ -103,17 +140,20 @@ form button {
   border: none;
   border-radius: 7px;
   font-weight: bold;
+  background-color: #191e24;
 }
 
 form button:hover {
-  background-color: #c6c6c6;
+  background-color: #1e242b;
 }
 
 form textarea {
   height: 100px;
   border: none;
-  background-color: #091e420f;
+  background-color: #d0d2d60f;
   border-radius: 7px;
+  color: white;
+  padding: 10px 10px;
 }
 
 .selectMenu {
