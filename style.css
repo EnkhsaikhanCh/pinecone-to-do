@@ -8,7 +8,8 @@ body {
 .text {
   font-family: Montserrat;
   font-weight: 600;
-  color: white;
+  /* color: white; */
+  color: #b6c2cf;
 }
 
 .boards {
@@ -18,6 +19,7 @@ body {
   gap: 20px;
   font-family: Arial, Helvetica, sans-serif;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .board {
@@ -33,16 +35,23 @@ body {
     rgba(17, 18, 27, 0) 100%
   ); */
   color: white;
-  gap: 20px;
+  gap: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .board button {
-  height: 30px;
+  height: 35px;
   border-radius: 10px;
   border: none;
-  background-color: #191e24;
-  color: white;
+  /* background-color: #191e24; */
+  background-color: #2d333b;
+  color: #9fadbc;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 6px 12px 6px 12px;
+  font-weight: bold;
 }
 
 .board button:hover {
@@ -55,6 +64,68 @@ h3 {
   padding: 10px;
 }
 
+/* toDoTask */
+.toDoTask {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  height: 90px;
+  background-color: #1e242b;
+  border-radius: 10px;
+  color: #b6c2cf;
+  border: 3px solid #1e242b;
+}
+
+.toDoTask:hover {
+  border: 3px solid #0198fa;
+}
+
+.toDoTask-check {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.toDoTask-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  /* border: 1px solid lightgreen; */
+}
+
+.toDoTask-content h4 {
+  margin: 10px 5px 0;
+}
+
+.toDoTask-content p {
+  margin: 0px 5px 0;
+}
+
+.toDoTask-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: 10px; */
+  gap: 5px;
+  font-size: larger;
+  justify-content: center;
+}
+
+.toDoTask-menu i {
+  /* background-color: #414c56; */
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toDoTask-menu i:hover {
+  background-color: #414c56;
+}
+
+/* modal */
 .modal {
   display: none;
   position: fixed;
@@ -72,18 +143,20 @@ h3 {
 .modal-content {
   position: relative;
   opacity: 1;
-  background-color: #22272e;
+  /* background-color: #22272e; */
+  background-color: #313941;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 400px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .modalHeader button {
   background-color: #2d333b;
   border: none;
   height: 30px;
   width: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,45 +188,58 @@ h3 {
 }
 
 .selectMenu {
-  background-color: #d0d2d60f;
-  color: white;
+  /* background-color: #3a444d; */
+  background-color: #22272b;
+  color: #b6c2cf;
   border: none;
   border-radius: 5px;
   padding: 0 10px;
+  height: 30px;
+  overflow: hidden;
 }
 
-form p {
+.form p {
   margin: 0;
+  font-size: 16px;
 }
 
-form input {
+.form input {
   height: 30px;
   border: none;
-  background-color: #d0d2d60f;
-  border-radius: 7px;
+  background-color: #3a444d;
+  border-radius: 5px;
   color: white;
   padding: 0 10px;
 }
 
-form button {
-  height: 40px;
-  border: none;
-  border-radius: 7px;
-  font-weight: bold;
-  background-color: #191e24;
+.form input:hover {
+  background-color: #414c56;
 }
 
-form button:hover {
+.form button {
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #3a444d;
+}
+
+.form button:hover {
   background-color: #1e242b;
 }
 
-form textarea {
+.form textarea {
   height: 100px;
   border: none;
-  background-color: #d0d2d60f;
-  border-radius: 7px;
+  background-color: #3a444d;
+  border-radius: 5px;
   color: white;
   padding: 10px 10px;
+  resize: none;
+}
+
+.form textarea:hover {
+  background-color: #414c56;
 }
 
 .selectMenu {

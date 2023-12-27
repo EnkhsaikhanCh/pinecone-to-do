@@ -20,19 +20,45 @@
     <section class="boards">
       <div class="board">
         <h3>To do</h3>
-        <button onclick="showModal()">Add task</button>
+        <div class="toDoTasks" id="toDoElement">
+          <div id="toDoTask" class="toDoTask">
+            <div class="toDoTask-check">
+              <i class="fa-regular fa-circle-check"></i>
+            </div>
+            <div class="toDoTask-content">
+              <h4>Title</h4>
+              <p>description description description</p>
+            </div>
+            <div class="toDoTask-menu">
+              <i class="fa-regular fa-circle-xmark"></i
+              ><i class="fa-regular fa-pen-to-square"></i>
+            </div>
+          </div>
+        </div>
+        <button onclick="showModal()">
+          <i class="fa-solid fa-plus"></i>Add task
+        </button>
       </div>
       <div class="board">
         <h3>In progress</h3>
-        <button onclick="showModal()">Add task</button>
+        <div class="inProgressTasks" id="toDoElement"></div>
+        <button onclick="showModal()">
+          <i class="fa-solid fa-plus"></i>Add task
+        </button>
       </div>
       <div class="board">
         <h3>Stuck</h3>
-        <button onclick="showModal()">Add task</button>
+        <div class="stuckTasks" id="toDoElement"></div>
+        <button onclick="showModal()">
+          <i class="fa-solid fa-plus"></i>Add task
+        </button>
       </div>
       <div class="board">
         <h3>Done</h3>
-        <button onclick="showModal()">Add task</button>
+        <div class="doneTasks" id="toDoElement"></div>
+        <button onclick="showModal()">
+          <i class="fa-solid fa-plus"></i>Add task
+        </button>
       </div>
 
       <!-- Modal -->
@@ -45,16 +71,26 @@
               <i class="fa-solid fa-xmark" style="color: #ffffff"></i>
             </button>
           </header>
-          <form class="form" action="">
+          <div class="form" action="">
             <div class="data">
-              <p class="text"><i class="fa-solid fa-heading"></i> Title</p>
-              <input type="text" />
+              <label class="text" for="inputTaskTitle"
+                ><i class="fa-solid fa-heading"></i> Title</label
+              >
+              <!-- input task title -->
+              <input id="inputTaskTitle" type="text" />
             </div>
             <div class="data">
-              <p class="text"><i class="fa-solid fa-bars"></i> Description</p>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <label class="text" for="inputTaskDescription"
+                ><i class="fa-solid fa-bars"></i> Description</label
+              >
+              <!-- input task description -->
+              <textarea
+                id="inputTaskDescription"
+                cols="30"
+                rows="10"
+              ></textarea>
             </div>
-            <div class="data">
+            <!-- <div class="data">
               <p class="text"><i class="fa-solid fa-filter"></i> Status</p>
               <select class="selectMenu" id="country" name="country">
                 <option value="to-do">To do</option>
@@ -70,9 +106,11 @@
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
               </select>
-            </div>
-            <button class="text">Add task</button>
-          </form>
+            </div> -->
+
+            <!-- add task button -->
+            <button class="text" onclick="addTask()">Add task</button>
+          </div>
         </div>
       </div>
     </section>
