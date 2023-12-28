@@ -17,103 +17,105 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="boards">
-      <div class="board">
-        <h3>To do</h3>
-        <div class="toDoTasks" id="toDoElement">
-          <div id="toDoTask" class="toDoTask">
-            <div class="toDoTask-check">
-              <i class="fa-regular fa-circle-check"></i>
-            </div>
-            <div class="toDoTask-content">
-              <h4>Title</h4>
-              <p>description description description</p>
-            </div>
-            <div class="toDoTask-menu">
-              <i class="fa-regular fa-circle-xmark"></i
-              ><i class="fa-regular fa-pen-to-square"></i>
+      <section class="boards">
+        <!-- To Do -->
+        <div class="board">
+          <h3 class="board-h3">To do</h3>
+          <div id="toDoTasks">
+            <!-- auto generated tasks -->
+          </div>
+          <button onclick="showModal('toDoTasks')">
+            <i class="fa-solid fa-plus"></i>Add task
+          </button>
+        </div>
+
+        <!-- Inprogress -->
+        <div class="board">
+          <h3 class="board-h3">In progress</h3>
+          <div id="inprogressTasks">
+            <!-- auto generated tasks -->
+          </div>
+          <button onclick="showModal('inprogressTasks')">
+            <i class="fa-solid fa-plus"></i>Add task
+          </button>
+        </div>
+
+        <!-- Stuck -->
+        <div class="board">
+          <h3 class="board-h3">Stuck</h3>
+          <div id="stuckTasks">
+            <!-- auto generated tasks -->
+          </div>
+          <button onclick="showModal('stuckTasks')">
+            <i class="fa-solid fa-plus"></i>Add task
+          </button>
+        </div>
+
+        <!-- Done -->
+        <div class="board">
+          <h3 class="board-h3">Done</h3>
+          <div id="doneTasks">
+            <!-- auto generated tasks -->
+          </div>
+          <button onclick="showModal('doneTasks')">
+            <i class="fa-solid fa-plus"></i>Add task
+          </button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="createModal">
+          <div class="modal-bg" onclick="hideModal()"></div>
+          <div class="modal-content">
+            <header class="modalHeader">
+              <h2 class="text">Add task</h2>
+              <button onclick="hideModal()">
+                <i class="fa-solid fa-xmark" style="color: #ffffff"></i>
+              </button>
+            </header>
+            <div class="form" action="">
+              <div class="data">
+                <label class="text" for="inputTaskTitle"
+                  ><i class="fa-solid fa-heading"></i> Title</label
+                >
+                <input id="inputTaskTitle" type="text" />
+              </div>
+              <div class="data">
+                <label class="text" for="inputTaskDescription"
+                  ><i class="fa-solid fa-bars"></i> Description</label
+                >
+                <textarea
+                  id="inputTaskDescription"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+              <div class="data">
+                <label for="taskStatus" class="text"
+                  ><i class="fa-solid fa-filter"></i> Status</label
+                >
+                <select class="selectMenu" id="taskStatus" name="country">
+                  <option value="toDoTasks">To do</option>
+                  <option value="inprogressTasks">In progress</option>
+                  <option value="stuckTasks">Stuck</option>
+                  <option value="doneTasks">Done</option>
+                </select>
+              </div>
+              <div class="data">
+                <label for="taskPiority" class="text"
+                  ><i class="fa-solid fa-sliders"></i> Priority</label
+                >
+                <select class="selectMenu" id="taskPiority" name="country">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+              <button class="text" onclick="addTask()">Add task</button>
             </div>
           </div>
-        </div>
-        <button onclick="showModal()">
-          <i class="fa-solid fa-plus"></i>Add task
-        </button>
-      </div>
-      <div class="board">
-        <h3>In progress</h3>
-        <div class="inProgressTasks" id="toDoElement"></div>
-        <button onclick="showModal()">
-          <i class="fa-solid fa-plus"></i>Add task
-        </button>
-      </div>
-      <div class="board">
-        <h3>Stuck</h3>
-        <div class="stuckTasks" id="toDoElement"></div>
-        <button onclick="showModal()">
-          <i class="fa-solid fa-plus"></i>Add task
-        </button>
-      </div>
-      <div class="board">
-        <h3>Done</h3>
-        <div class="doneTasks" id="toDoElement"></div>
-        <button onclick="showModal()">
-          <i class="fa-solid fa-plus"></i>Add task
-        </button>
-      </div>
 
-      <!-- Modal -->
-      <div class="modal" id="createModal">
-        <div class="modal-bg" onclick="hideModal()"></div>
-        <div class="modal-content">
-          <header class="modalHeader">
-            <h2 class="text">Add task</h2>
-            <button onclick="hideModal()">
-              <i class="fa-solid fa-xmark" style="color: #ffffff"></i>
-            </button>
-          </header>
-          <div class="form" action="">
-            <div class="data">
-              <label class="text" for="inputTaskTitle"
-                ><i class="fa-solid fa-heading"></i> Title</label
-              >
-              <!-- input task title -->
-              <input id="inputTaskTitle" type="text" />
-            </div>
-            <div class="data">
-              <label class="text" for="inputTaskDescription"
-                ><i class="fa-solid fa-bars"></i> Description</label
-              >
-              <!-- input task description -->
-              <textarea
-                id="inputTaskDescription"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-            <!-- <div class="data">
-              <p class="text"><i class="fa-solid fa-filter"></i> Status</p>
-              <select class="selectMenu" id="country" name="country">
-                <option value="to-do">To do</option>
-                <option value="in-progress">In progress</option>
-                <option value="stuck">Stuck</option>
-                <option value="done">Done</option>
-              </select>
-            </div>
-            <div class="data">
-              <p class="text"><i class="fa-solid fa-sliders"></i> Priority</p>
-              <select class="selectMenu" id="country" name="country">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-              </select>
-            </div> -->
-
-            <!-- add task button -->
-            <button class="text" onclick="addTask()">Add task</button>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

@@ -1,54 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;500;600&display=swap");
 
 body {
-  margin: 0;
   background-color: #22272e;
+  display: grid;
+  overflow-x: auto;
+  grid-auto-flow: column;
 }
 
 .text {
   font-family: Montserrat;
   font-weight: 600;
-  /* color: white; */
   color: #b6c2cf;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.algin-center {
+  align-items: center;
+}
+
 .boards {
-  margin-top: 100px;
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  font-family: Arial, Helvetica, sans-serif;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 100px;
+  flex-direction: row;
+  gap: 20px;
+  font-family: Montserrat;
 }
 
 .board {
-  width: 330px;
-  border-radius: 15px;
   display: flex;
   flex-direction: column;
+  width: 300px;
+  border-radius: 15px;
   padding: 15px;
   background-color: #2d333b;
-  /* background: linear-gradient(
-    126.6deg,
-    rgba(124, 130, 177, 0.12) 28.69%,
-    rgba(17, 18, 27, 0) 100%
-  ); */
   color: white;
   gap: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .board button {
-  height: 35px;
-  border-radius: 10px;
-  border: none;
-  /* background-color: #191e24; */
-  background-color: #2d333b;
-  color: #9fadbc;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2d333b;
+  color: #9fadbc;
   gap: 10px;
   padding: 6px 12px 6px 12px;
   font-weight: bold;
@@ -58,14 +61,12 @@ body {
   background-color: #1e242b;
 }
 
-h3 {
-  font-family: Montserrat;
+.board-h3 {
   margin: 0;
-  padding: 10px;
 }
 
-/* toDoTask */
-.toDoTask {
+/* Task --------------- */
+.task {
   display: grid;
   grid-template-columns: 15% 70% 15%;
   height: 90px;
@@ -73,65 +74,78 @@ h3 {
   border-radius: 10px;
   color: #b6c2cf;
   border: 3px solid #1e242b;
+  margin-bottom: 10px;
 }
 
-.toDoTask:hover {
+.task:hover {
   border: 3px solid #0198fa;
 }
 
-.toDoTask-check {
+.task-check {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   font-size: larger;
 }
 
-.toDoTask-content {
+.task-content {
   display: flex;
   flex-direction: column;
   gap: 10px;
   overflow: hidden;
-  /* border: 1px solid lightgreen; */
 }
 
-.toDoTask-content h4 {
-  margin: 10px 5px 0;
+.task-content h4 {
+  font-size: medium;
+  margin: 5px 5px 0;
 }
 
-.toDoTask-content p {
+.task-content p {
+  font-size: smaller;
   margin: 0px 5px 0;
 }
 
-.toDoTask-menu {
+.piority {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 20px;
+  width: 60px;
+  color: black;
+  background-color: #0198fa;
+  font-family: Montserrat;
+  font-size: smaller;
+}
+
+.task-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 10px; */
   gap: 5px;
   font-size: larger;
   justify-content: center;
 }
 
-.toDoTask-menu i {
-  /* background-color: #414c56; */
-  padding: 5px;
-  border-radius: 5px;
+.task-menu i {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.toDoTask-menu i:hover {
+.task-menu i:hover {
   background-color: #414c56;
 }
 
 /* modal */
 .modal {
   display: none;
-  position: fixed;
-  inset: 0;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  inset: 0;
 }
 
 .modal-bg {
@@ -143,23 +157,22 @@ h3 {
 .modal-content {
   position: relative;
   opacity: 1;
-  /* background-color: #22272e; */
   background-color: #313941;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  width: 380px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .modalHeader button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #2d333b;
   border: none;
   height: 30px;
   width: 30px;
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .modalHeader button:hover {
@@ -188,7 +201,6 @@ h3 {
 }
 
 .selectMenu {
-  /* background-color: #3a444d; */
   background-color: #22272b;
   color: #b6c2cf;
   border: none;
