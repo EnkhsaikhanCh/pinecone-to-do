@@ -21,10 +21,10 @@
         <!-- To Do -->
         <div class="board">
           <h3 class="board-h3">To do</h3>
-          <div id="toDoTasks">
+          <div id="todoTask">
             <!-- auto generated tasks -->
           </div>
-          <button onclick="showModal('toDoTasks')">
+          <button onclick="showModal('todoTask')">
             <i class="fa-solid fa-plus"></i>Add task
           </button>
         </div>
@@ -94,10 +94,10 @@
                   ><i class="fa-solid fa-filter"></i> Status</label
                 >
                 <select class="selectMenu" id="taskStatus" name="country">
-                  <option value="toDoTasks">To do</option>
-                  <option value="inprogressTasks">In progress</option>
-                  <option value="stuckTasks">Stuck</option>
-                  <option value="doneTasks">Done</option>
+                  <option value="todo">To do</option>
+                  <option value="inprogress">In progress</option>
+                  <option value="stuck">Stuck</option>
+                  <option value="done">Done</option>
                 </select>
               </div>
               <div class="data">
@@ -113,7 +113,7 @@
               <button class="text" onclick="addTask()">Add task</button>
             </div>
           </div>
-
+        </div>
       </section>
     </div>
     <script src="./script.js"></script>
