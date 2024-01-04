@@ -22,8 +22,8 @@ const tasks = [
   },
   {
     id: -3,
-    title: "Reading book",
-    description: "Atomic Habit",
+    title: "Running",
+    description: "at National Park",
     piority: "hard",
     status: "done",
   },
@@ -31,6 +31,7 @@ const tasks = [
 
 let currentTarget = "todoTask";
 let generatedId = 0;
+let editingIndex;
 
 function renderTasks() {
   const todoTaskElement = document.getElementById("todoTask");
@@ -63,7 +64,7 @@ function renderTasks() {
     } else {
       generatedId++;
       const taskHTML = `
-        <div id="task-${generatedId}">
+        <div id="task-${generatedId}" >
               <div id="toDoTask" class="task">
                 <div class="task-check">
                   <i class="fa-regular fa-circle-check"></i>
@@ -75,7 +76,7 @@ function renderTasks() {
                 </div>
                 <div class="task-menu">
                   <i class="fa-regular fa-circle-xmark" onclick="removeTask(${i})"></i
-                  ><i class="fa-regular fa-pen-to-square"></i>
+                  ><i class="fa-regular fa-pen-to-square" onclick="editTask(${i})"></i>
                 </div>
               </div>
         </div>
@@ -114,6 +115,36 @@ function addTask() {
     piority: piority,
     status: status,
   });
+  renderTasks();
+  hideModal();
+  resetForm();
+}
+
+// Editing function
+// 1. Show Modal: Done
+// 2. Fill the input
+function editTask(index) {
+  showModal();
+
+  document.getElementById("inputTaskTitle").value = tasks[index].title;
+  document.getElementById("inputTaskDescription").value =
+    tasks[index].description;
+  document.getElementById("taskStatus").value = tasks[index].status;
+  document.getElementById("taskPiority").value = tasks[index].piority;
+
+  editingIndex = index;
+}
+// 3. Save to array
+function updateTask() {
+  const title = document.getElementById("inputTaskTitle").value;
+  const description = document.getElementById("inputTaskDescription").value;
+  const status = document.getElementById("taskStatus").value;
+  const piority = document.getElementById("taskPiority").value;
+
+  tasks[editingIndex].title = title;
+  tasks[editingIndex].description = description;
+  tasks[editingIndex].status = status;
+  tasks[editingIndex].piority = piority;
 
   renderTasks();
   hideModal();
@@ -121,8 +152,10 @@ function addTask() {
 }
 
 function removeTask(index) {
-  tasks.splice(index, 1);
-  renderTasks();
+  if (confirm("Та устгахдаа итгэлтэй байна уу?")) {
+    tasks.splice(index, 1);
+    renderTasks();
+  }
 }
 
 function resetForm() {
