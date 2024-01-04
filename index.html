@@ -20,7 +20,7 @@
       <section class="boards">
         <!-- To Do -->
         <div class="board">
-          <h3 class="board-h3">To do</h3>
+          <h3 class="board-h3" >To do</h3>
           <div id="todoTask">
             <!-- auto generated tasks -->
           </div>
@@ -66,6 +66,7 @@
         <div class="modal" id="createModal">
           <div class="modal-bg" onclick="hideModal()"></div>
           <div class="modal-content">
+            <!-- Header -->
             <header class="modalHeader">
               <h2 class="text">Add task</h2>
               <button onclick="hideModal()">
@@ -73,12 +74,14 @@
               </button>
             </header>
             <div class="form" action="">
+              <!-- Title -->
               <div class="data">
                 <label class="text" for="inputTaskTitle"
                   ><i class="fa-solid fa-heading"></i> Title</label
                 >
                 <input id="inputTaskTitle" type="text" />
               </div>
+              <!-- Description -->
               <div class="data">
                 <label class="text" for="inputTaskDescription"
                   ><i class="fa-solid fa-bars"></i> Description</label
@@ -89,7 +92,8 @@
                   rows="10"
                 ></textarea>
               </div>
-              <div class="data">
+              <!-- Status -->
+                <div class="data">
                 <label for="taskStatus" class="text"
                   ><i class="fa-solid fa-filter"></i> Status</label
                 >
@@ -100,6 +104,7 @@
                   <option value="done">Done</option>
                 </select>
               </div>
+              <!-- Piority -->
               <div class="data">
                 <label for="taskPiority" class="text"
                   ><i class="fa-solid fa-sliders"></i> Priority</label
@@ -110,10 +115,17 @@
                   <option value="hard">Hard</option>
                 </select>
               </div>
-              <button class="text" onclick="addTask()">Add task</button>
+              
+              <!-- Button -->
+              <div class="modal-btns">
+                <button id="addTask" class="text" onclick="addTask()">Add task</button>
+                <button id="updateTask" class="text" onclick="updateTask()">Update Task</button>
+              </div>
             </div>
           </div>
         </div>
+
+        
       </section>
     </div>
     <script src="./script.js"></script>

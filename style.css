@@ -35,11 +35,11 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 15px;
   background-color: #2d333b;
   color: white;
-  gap: 10px;
+  /* gap: 20px; */
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -48,7 +48,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   background-color: #2d333b;
   color: #9fadbc;
@@ -62,7 +62,12 @@ body {
 }
 
 .board-h3 {
-  margin: 0;
+  margin: 0px 5px 10px;
+  /* margin: 0;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: 2px solid #0198fa;
+  border-radius: 10px; */
 }
 
 /* Task --------------- */
@@ -73,12 +78,12 @@ body {
   background-color: #1e242b;
   border-radius: 10px;
   color: #b6c2cf;
-  border: 3px solid #1e242b;
+  border: 2px solid #1e242b;
   margin-bottom: 10px;
 }
 
 .task:hover {
-  border: 3px solid #0198fa;
+  border: 2px solid #0198fa;
 }
 
 .task-check {
@@ -159,7 +164,7 @@ body {
   opacity: 1;
   background-color: #313941;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 13px;
   width: 380px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -230,6 +235,7 @@ body {
 
 .form button {
   height: 45px;
+  width: 100%;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -238,6 +244,12 @@ body {
 
 .form button:hover {
   background-color: #1e242b;
+}
+
+.modal-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .form textarea {
@@ -256,4 +268,5 @@ body {
 
 .selectMenu {
   height: 30px;
+  width: 100%;
 }
