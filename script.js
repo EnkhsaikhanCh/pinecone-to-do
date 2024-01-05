@@ -21,7 +21,7 @@ const tasks = [
     status: "stuck",
   },
   {
-    id: -3,
+    id: -4,
     title: "Running",
     description: "at National Park",
     piority: "hard",
@@ -108,6 +108,7 @@ function addTask() {
   const description = document.getElementById("inputTaskDescription").value;
   const status = document.getElementById("taskStatus").value;
   const piority = document.getElementById("taskPiority").value;
+
   tasks.push({
     id: generatedId++,
     title: title,
@@ -115,16 +116,14 @@ function addTask() {
     piority: piority,
     status: status,
   });
+
   renderTasks();
   hideModal();
   resetForm();
 }
 
-// Editing function
-// 1. Show Modal: Done
-// 2. Fill the input
 function editTask(index) {
-  showModal();
+  showUpdateModal();
 
   document.getElementById("inputTaskTitle").value = tasks[index].title;
   document.getElementById("inputTaskDescription").value =
@@ -134,7 +133,7 @@ function editTask(index) {
 
   editingIndex = index;
 }
-// 3. Save to array
+
 function updateTask() {
   const title = document.getElementById("inputTaskTitle").value;
   const description = document.getElementById("inputTaskDescription").value;
@@ -151,6 +150,13 @@ function updateTask() {
   resetForm();
 }
 
+function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("inputTaskDescription").focus();
+  }
+}
+
 function removeTask(index) {
   if (confirm("Та устгахдаа итгэлтэй байна уу?")) {
     tasks.splice(index, 1);
@@ -161,17 +167,33 @@ function removeTask(index) {
 function resetForm() {
   document.getElementById("inputTaskTitle").value = "";
   document.getElementById("inputTaskDescription").value = "";
+  document.getElementById("taskStatus").value = "";
+  document.getElementById("taskPiority").value = "";
 }
 
 function hideModal() {
   const modal = document.getElementById("createModal");
   modal.style.display = "none";
+  resetForm();
 }
 
 function showModal(targetId) {
   const modal = document.getElementById("createModal");
   modal.style.display = "flex";
   currentTarget = targetId;
+  const btn = document.querySelector("#updateTask");
+  btn.style.display = "none";
+  const btn1 = document.querySelector("#addTask");
+  btn1.style.display = "flex";
+}
+
+function showUpdateModal() {
+  const modal = document.getElementById("createModal");
+  modal.style.display = "flex";
+  const btn = document.querySelector("#addTask");
+  btn.style.display = "none";
+  const btn1 = document.querySelector("#updateTask");
+  btn1.style.display = "flex";
 }
 
 renderTasks();

@@ -164,8 +164,8 @@ body {
   opacity: 1;
   background-color: #313941;
   padding: 20px;
-  border-radius: 13px;
-  width: 380px;
+  border-radius: 10px;
+  width: 350px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -198,7 +198,7 @@ body {
 .modalHeader {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .modalHeader h2 {
@@ -240,6 +240,8 @@ body {
   border-radius: 5px;
   font-weight: bold;
   background-color: #3a444d;
+  justify-content: center;
+  align-items: center;
 }
 
 .form button:hover {
