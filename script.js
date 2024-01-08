@@ -5,30 +5,33 @@ const tasks = [
     description: "Outside running",
     piority: "low",
     status: "todo",
+    position: 3,
   },
   {
     id: -2,
     title: "Homework",
     description: "Math homework",
     piority: "medium",
-    status: "inprogress",
+    status: "todo",
+    position: 4,
   },
   {
     id: -3,
     title: "Reading book",
     description: "Atomic Habit",
     piority: "hard",
-    status: "stuck",
+    status: "todo",
+    position: 2,
   },
   {
     id: -4,
     title: "Running",
     description: "at National Park",
     piority: "hard",
-    status: "done",
+    status: "todo",
+    position: 1,
   },
 ];
-
 let currentTarget = "todoTask";
 let generatedId = 0;
 let editingIndex;
@@ -44,17 +47,8 @@ function renderTasks() {
   let stuckResult = "";
   let doneResult = "";
 
-  tasks.sort((a1, b1) => {
-    const piorityNumbers = {
-      hard: 1,
-      medium: 2,
-      low: 3,
-    };
-    if (piorityNumbers[a1.piority] > piorityNumbers[b1.piority]) {
-      return 1;
-    } else {
-      return -1;
-    }
+  tasks.sort((a1, a2) => {
+    return a1.position - a2.position;
   });
 
   for (let i = 0; i < tasks.length; i++) {
@@ -72,7 +66,23 @@ function renderTasks() {
                 <div class="task-content">
                   <h4>${task.title}</h4>
                   <p>${task.description}</p>
+                  <div class="piority-status">
                   <span class="piority">${task.piority}</span>
+                  <select class="statusSelect" onchange="changeStatus(${i}, this.value)">
+                    <option ${
+                      task.status === "todo" ? "selected" : ""
+                    }>todo</option>
+                    <option ${
+                      task.status === "inprogress" ? "selected" : ""
+                    }>inprogress</option>
+                    <option ${
+                      task.status === "stuck" ? "selected" : ""
+                    }>stuck</option>
+                    <option ${
+                      task.status === "done" ? "selected" : ""
+                    }>done</option>
+                  </select>
+                  </div>
                 </div>
                 <div class="task-menu">
                   <i class="fa-regular fa-circle-xmark" onclick="removeTask(${i})"></i
@@ -101,6 +111,11 @@ function renderTasks() {
   inprogressTaskElement.innerHTML = inprogressResult;
   stuckTaskElement.innerHTML = stuckResult;
   doneTaskElement.innerHTML = doneResult;
+}
+
+function changeStatus(index, value) {
+  tasks[index].status = value;
+  renderTasks();
 }
 
 function addTask() {
