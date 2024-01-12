@@ -3,7 +3,7 @@ const tasks = [
     id: -1,
     title: "Workout",
     description: "Outside running",
-    piority: "low",
+    priority: "low",
     status: "todo",
     position: 3,
   },
@@ -11,7 +11,7 @@ const tasks = [
     id: -2,
     title: "Homework",
     description: "Math homework",
-    piority: "medium",
+    priority: "medium",
     status: "todo",
     position: 4,
   },
@@ -19,7 +19,7 @@ const tasks = [
     id: -3,
     title: "Reading book",
     description: "Atomic Habit",
-    piority: "hard",
+    priority: "hard",
     status: "todo",
     position: 2,
   },
@@ -27,7 +27,7 @@ const tasks = [
     id: -4,
     title: "Running",
     description: "at National Park",
-    piority: "hard",
+    priority: "hard",
     status: "todo",
     position: 1,
   },
@@ -54,7 +54,7 @@ function renderTasks() {
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     if ((task.title === "", task.description === "")) {
-      alert("Ta utga oruulnuu");
+      alert("Та утга оруул нуу!");
     } else {
       generatedId++;
       const taskHTML = `
@@ -66,8 +66,8 @@ function renderTasks() {
                 <div class="task-content">
                   <h4>${task.title}</h4>
                   <p>${task.description}</p>
-                  <div class="piority-status">
-                  <span class="piority">${task.piority}</span>
+                  <div class="priority-status">
+                  <span class="priority">${task.priority}</span>
                   <select class="statusSelect" onchange="changeStatus(${i}, this.value)">
                     <option ${
                       task.status === "todo" ? "selected" : ""
@@ -122,13 +122,13 @@ function addTask() {
   const title = document.getElementById("inputTaskTitle").value;
   const description = document.getElementById("inputTaskDescription").value;
   const status = document.getElementById("taskStatus").value;
-  const piority = document.getElementById("taskPiority").value;
+  const priority = document.getElementById("taskPriority").value;
 
   tasks.push({
     id: generatedId++,
     title: title,
     description: description,
-    piority: piority,
+    priority: priority,
     status: status,
   });
 
@@ -144,7 +144,7 @@ function editTask(index) {
   document.getElementById("inputTaskDescription").value =
     tasks[index].description;
   document.getElementById("taskStatus").value = tasks[index].status;
-  document.getElementById("taskPiority").value = tasks[index].piority;
+  document.getElementById("taskPriority").value = tasks[index].priority;
 
   editingIndex = index;
 }
@@ -153,12 +153,12 @@ function updateTask() {
   const title = document.getElementById("inputTaskTitle").value;
   const description = document.getElementById("inputTaskDescription").value;
   const status = document.getElementById("taskStatus").value;
-  const piority = document.getElementById("taskPiority").value;
+  const priority = document.getElementById("taskPriority").value;
 
   tasks[editingIndex].title = title;
   tasks[editingIndex].description = description;
   tasks[editingIndex].status = status;
-  tasks[editingIndex].piority = piority;
+  tasks[editingIndex].priority = priority;
 
   renderTasks();
   hideModal();
@@ -183,7 +183,7 @@ function resetForm() {
   document.getElementById("inputTaskTitle").value = "";
   document.getElementById("inputTaskDescription").value = "";
   document.getElementById("taskStatus").value = "";
-  document.getElementById("taskPiority").value = "";
+  document.getElementById("taskPriority").value = "";
 }
 
 function hideModal() {
